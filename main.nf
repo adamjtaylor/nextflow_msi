@@ -13,11 +13,12 @@ process matlabAdd {
  
     output:
     val 'sum' into records
+   
+   """
+     matlab -nodesktop -nosplash -r \
+    "disp(['Hello world!. The first parameter is' $first]); \
+     exit"
  
-    """
-    matlab -nojvm -nodisplay -nosplash
-   disp(['Hello world!. The first parameter is' $first])
-   exit;
     """
 }
  
