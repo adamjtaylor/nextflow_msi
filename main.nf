@@ -14,6 +14,7 @@ process matlabAdd {
    """
      matlab -nodesktop -nosplash -r \
     "disp(['Hello world!. The first parameter is' ${params.first}); \
+    ${params.first} +1
      exit"
  
     """
