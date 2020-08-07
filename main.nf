@@ -3,22 +3,27 @@
 params.first = 2
 params.second = 4
 
-/* A trivial matlab script adding two numbers
  
 /*
- * A trivial Perl script producing a list of numbers pair
+ * split a fasta file in multiple files
  */
-process matlabTask {
-    echo = true
+process matlabAdd {
  
-    shell:
-    '''
-    #!/usr/bin/env bash
+    input:
+    'input.first' from params.first
+    'input.second' from params.second
  
-   matlab -nojvm -nodisplay -nosplash
-   print($first+$second)
+    output:
+    'sum' into records
+ 
+    """
+    matlab -nojvm -nodisplay -nosplash
+   print(input.first + input.second)
    exit;
- 
-    '''
+    """
 }
  
+/*
+ * print the channel content
+ */
+records.subscribe { println it }
