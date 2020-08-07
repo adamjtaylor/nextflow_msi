@@ -9,14 +9,14 @@ params.first = 2
 process matlabAdd {
  
     input:
-    stdin 'input.first' from params.first
+    stdin first from params.first
  
     output:
     val 'sum' into records
  
     """
     matlab -nojvm -nodisplay -nosplash
-   disp(['Hello world!. The first parameter is' input.first])
+   disp(['Hello world!. The first parameter is' $first])
    exit;
     """
 }
