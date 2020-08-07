@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
  
-params.first = 2
+params.first = Channel.from(1, 2, 3)
 
  
 /*
