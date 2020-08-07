@@ -10,11 +10,11 @@ params.second = 4
 process matlabAdd {
  
     input:
-    'input.first' from params.first
-    'input.second' from params.second
+    stdin 'input.first' from params.first
+    stdin 'input.second' from params.second
  
     output:
-    'sum' into records
+    val 'sum' into records
  
     """
     matlab -nojvm -nodisplay -nosplash
