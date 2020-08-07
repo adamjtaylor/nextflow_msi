@@ -16,7 +16,7 @@ process matlabAdd {
  
     """
     matlab -nojvm -nodisplay -nosplash
-   print(input.first +1)
+   input.first +1
    exit;
     """
 }
