@@ -16,7 +16,7 @@ process matlabAdd {
  
     """
     matlab -nojvm -nodisplay -nosplash
-   input.first +1
+   disp(['Hello world!. The first parameter is' input.first])
    exit;
     """
 }
