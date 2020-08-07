@@ -8,15 +8,12 @@ params.first = 2
  */
 process matlabAdd {
  
-    input:
-    stdin first from params.first
- 
     output:
     val 'sum' into records
    
    """
      matlab -nodesktop -nosplash -r \
-    "disp(['Hello world!. The first parameter is' $first]); \
+    "disp(['Hello world!. The first parameter is' ${params.first}); \
      exit"
  
     """
