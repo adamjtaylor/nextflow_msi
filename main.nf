@@ -1,40 +1,50 @@
 #!/usr/bin/env nextflow
  
-params.in = "$baseDir/data/sample.fa"
+params.range = 100
  
 /*
- * split a fasta file in multiple files
+ * A trivial Perl script producing a list of numbers pair
  */
-process splitSequences {
- 
-    input:
-    path 'input.fa' from params.in
- 
+process perlTask {
     output:
-    path 'seq_*' into records
+    stdout into randNums
  
-    """
-    awk '/^>/{f="seq_"++d} {print > f}' < input.fa
-    """
+    shell:
+    '''
+    #!/usr/bin/env perl
+    use strict;
+    use warnings;
+ 
+    my $count;
+    my $range = !{params.range};
+    for ($count = 0; $count < 10; $count++) {
+        print rand($range) . ', ' . rand($range) . "\n";
+    }
+    '''
 }
  
 /*
- * Simple reverse the sequences
+ * A Python script task which parses the output of the previous script
  */
-process reverse {
+process pyTask {
+    echo true
  
     input:
-    path x from records
-     
-    output:
-    stdout into result
+    stdin from randNums
  
-    """
-    cat $x | rev
-    """
+    '''
+    #!/usr/bin/env python
+    import sys
+ 
+    x = 0
+    y = 0
+    lines = 0
+    for line in sys.stdin:
+        items = line.strip().split(",")
+        x = x+ float(items[0])
+        y = y+ float(items[1])
+        lines = lines+1
+ 
+    print "avg: %s - %s" % ( x/lines, y/lines )
+    '''
 }
- 
-/*
- * print the channel content
- */
-result.subscribe { println it }
