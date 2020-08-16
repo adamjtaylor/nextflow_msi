@@ -109,3 +109,5 @@ peakPicking.addPeakFilter(medianPeakFilter);
         '-append')
 
     disp([name ' complete']);
+
+exit;
