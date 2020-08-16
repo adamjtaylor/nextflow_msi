@@ -1,6 +1,6 @@
 function sa_auto(input_file)
 
-spectralAnalysisPath = '/mnt/x/Adam/spectralanalysis-master/spectralanalysis-master';
+spectralAnalysisPath = '/mnt/x/Adam/SpectralAnalysis-master/SpectralAnalysis-master';
 
 %inputFolder = [spectralAnalysisPath filesep 'example-data' filesep 'mouse-brain']; %location of imzML files to process
 %outputFoler = [spectralAnalysisPath filesep 'example-data' filesep 'mouse-brain'];
@@ -13,7 +13,7 @@ spectralAnalysisPath = '/mnt/x/Adam/spectralanalysis-master/spectralanalysis-mas
 % Set up datacube generation variables
 
 % Preprocessing file (.sap) location
-preprocessingWorkflowFile = [spectralAnalysisPath filesep 'example-data' filesep 'mouse-brain' filesep 'mouse-brain-preprocessingWorkflow.sap']; 
+preprocessingWorkflowFile = '~Documents/mouse-brain/mouse-brain-preprocessingWorkflow.sap'; 
 nzm_multiple = 3; % multiple of non zero median
 
 % Add SpectralAnalysis to the path - this only needs to be done once per MATLAB session
