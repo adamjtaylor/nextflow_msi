@@ -1,6 +1,6 @@
 function dummy(input_file)
 
 M = input_file;
-save(genpath('~/Documents/test/test.txt'), 'M');
+save('test.mat', 'M');
 
 end
