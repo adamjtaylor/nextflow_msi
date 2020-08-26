@@ -2,10 +2,10 @@ function sa_auto(input_file)
 
 spectralAnalysisPath = '/mnt/x/Adam/SpectralAnalysis-master/SpectralAnalysis-master';
 
-%inputFolder = [spectralAnalysisPath filesep 'example-data' filesep 'mouse-brain']; %location of imzML files to process
+%inputFolder = [spectralAnalysisPath filesep 'example-data' filesep 'mouse-brain'];
 %outputFoler = [spectralAnalysisPath filesep 'example-data' filesep 'mouse-brain'];
 %outputFoler = [spectralAnalysisPath filesep 'example-data' filesep 'mouse-brain'];
-%filesToProcess = dir([inputFolder filesep '*.imzML']); %gets all imzML files in folder
+%filesToProcess = dir([inputFolder filesep '*.imzML']);
 
 [filepath,name,ext] = fileparts(input_file)
 
