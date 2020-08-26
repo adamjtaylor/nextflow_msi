@@ -9,10 +9,6 @@ process sa_auto {
     path x from params.in
     
     """
-    matlab -nodesktop -nosplash -r \	     matlab -nodesktop -nosplash -r "dummy($x); exit;"
-    "disp(['Processing file' $x]); \	
-    dummy($x); \	
-    disp("Complete") \	
-    exit" \	
+    matlab -nodesktop -nosplash -r "dummy($x); exit;"
     """
 }
