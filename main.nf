@@ -9,6 +9,6 @@ val x from params.in
 
     
     """
-     matlab -nodestop -nodisplay -r "dummy('$x');exit"
+     matlab -nodesktop -nodisplay -r "dummy('$x');exit"
     """
 }
