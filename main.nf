@@ -17,8 +17,6 @@ output:
 
     
     """
-     matlab -nodesktop -nodisplay -r "addpath(genpath('$HOME/Documents/nextflow_msi')); dummy('$x');exit"
+     matlab -nodesktop -nodisplay -r "addpath(genpath('$HOME/Documents/nextflow_msi')); sa_auto('$x');exit"
     """
 }
-
-records.subscribe { println "Received: " + it.text }
