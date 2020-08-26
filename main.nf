@@ -9,11 +9,14 @@ process sa_auto {
     path x from params.in
    
    """
+   echo "Processing" \
+   echo $x \
      matlab -nodesktop -nosplash -r \
     "disp(['Processing file' $x]); \
     sa_auto($x); \
     disp("Complete") \
-     exit"
+     exit" \
+    echo "Complete"
  
     """
 }
