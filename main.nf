@@ -11,7 +11,7 @@ input:
    """
      matlab -nodesktop -nosplash -r \
     "disp(['Processing file' $x]); \
-    sa_auto($x); \
+    dummy($x); \
     disp("Complete") \
      exit" \
     """
