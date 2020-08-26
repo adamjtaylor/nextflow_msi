@@ -4,7 +4,7 @@ params.in = "test"
  
 
 process sa_auto {
-
+ input:
 val x from params.in
 
     
