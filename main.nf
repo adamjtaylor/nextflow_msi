@@ -13,7 +13,7 @@ val x from params.in
 
 
 output:
-    file 'test*' into records
+    file '*.mat' into records
 
     
     """
