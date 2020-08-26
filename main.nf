@@ -12,7 +12,7 @@ output:
 
     
     """
-     matlab -nodesktop -nodisplay -r "dummy('$x');exit"
+     matlab -nodesktop -nodisplay -r "addpath(genpath('$HOME/Documents/nextflow_msi')); dummy('$x');exit"
     """
 }
 
