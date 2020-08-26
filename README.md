@@ -5,4 +5,4 @@ to run ensure you have nextflow installed then cd to the folder you wish the out
 
 Then run the following command
 
-nextflow run adamjtaylor/nextflow_msi --in "path_to_imzml" --outdir "output_dir_name"
+    nextflow run adamjtaylor/nextflow_msi --in "path_to_imzml" --outdir "output_dir_name"
