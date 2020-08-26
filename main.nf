@@ -5,10 +5,14 @@ params.in = "$HOME/mouse-brain/SagittalMouseCerebellum.imzML"
 
 process sa_auto {
  
-input:
+    input:
     path x from params.in
-
-   """
-     echo $x
+    
+    """
+    matlab -nodesktop -nosplash -r \	     matlab -nodesktop -nosplash -r "dummy($x); exit;"
+    "disp(['Processing file' $x]); \	
+    dummy($x); \	
+    disp("Complete") \	
+    exit" \	
     """
 }
