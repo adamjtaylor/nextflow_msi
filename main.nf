@@ -5,9 +5,10 @@ params.in = "$HOME/mouse-brain/SagittalMouseCerebellum.imzML"
 
 process sa_auto {
  
-    input:
+input:
     path x from params.in
-   
+
+exec:
    """
    echo "Processing" \
    echo $x \
