@@ -20,5 +20,5 @@ In a reproducible contanarised environemnt this will
 
 TODO
 
-- [ ] Install SA within container
+- [x] Install SA within container
 - [ ] Allow to work in parallel through multiple files
