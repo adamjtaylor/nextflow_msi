@@ -17,3 +17,7 @@ In a reproducible contanarised environemnt this will
 - save mean spectra of each cluster
 - save datacube, pixel locations and mean spectra
 - return these in a matlab v7.3 (hdf5) file
+
+TODO
+-[] Install SA within container
+-[] Allow to work in parallel through multiple files
