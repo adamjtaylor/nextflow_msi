@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
  
-params.in = Channel.fromPath( "/home/adamjtaylor/Documents/mouse-brain/*.imzML" ).buffer(size:3)
+params.in = Channel.fromPath( "/home/adamtaylor/Documents/mouse-brain/*.imzML" ).buffer(size:3)
 params.outdir = 'my-results'
  
 
