@@ -10,8 +10,8 @@ process sa_auto {
    
    """
      matlab -nodesktop -nosplash -r \
-    "disp(['Processing file' $x]); \
-    sa_auto($x); \
+    "disp(['Processing file' $input.imzml]); \
+    sa_auto($input.imzml); \
     disp("Complete") \
      exit"
  
