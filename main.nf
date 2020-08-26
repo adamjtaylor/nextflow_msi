@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
  
-params.in = "~/Documents/mouse-brain/SagittalMouseCerebellum.imzML"
+params.in = "$HOME/mouse-brain/SagittalMouseCerebellum.imzML"
  
 
 process sa_auto {
