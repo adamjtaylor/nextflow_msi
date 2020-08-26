@@ -1,12 +1,14 @@
 #!/usr/bin/env nextflow
  
-params.in = "$HOME/mouse-brain/SagittalMouseCerebellum.imzML"
+params.in = "test"
  
 
 process sa_auto {
 
+val x from params.in
+
     
     """
-     matlab -nodestop -nodisplay -r "dummy('test');exit"
+     matlab -nodestop -nodisplay -r "dummy($x);exit"
     """
 }
