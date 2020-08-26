@@ -16,3 +16,4 @@ In a reproducible contanarised environemnt this will
 - k-means cluster with cosine distance and k = 2
 - save mean spectra of each cluster
 - save datacube, pixel locations and mean spectra
+- return these in a matlab v7.3 (hdf5) file
