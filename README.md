@@ -1,5 +1,5 @@
 # nextflow_msi
-Working up a nextflow pipeline to convert and process MSI data with SpectralAnalysi
+Working up a nextflow pipeline to convert and process MSI data with SpectralAnalysis
 
 to run ensure you have nextflow installed then cd to the folder you wish the output directory to be placed
 
