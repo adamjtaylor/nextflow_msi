@@ -1,26 +1,19 @@
 #!/usr/bin/env nextflow
  
-params.first = Channel.from(1, 2, 3)
+params.in = "~/Documents/mouse-brain/SagittalMouseCerebellum.imzML"
+ 
 
+process sa_auto {
  
-/*
- * split a fasta file in multiple files
- */
-process matlabAdd {
- 
-    output:
-    val 'sum' into records
+    input:
+    path 'input.imzml' from params.in
    
    """
      matlab -nodesktop -nosplash -r \
-    "disp(['Hello world!. The first parameter is' ${params.first}); \
-    ${params.first} +1
+    "disp(['Processing file' $x]); \
+    sa_auto($x); \
+    disp("Complete") \
      exit"
  
     """
 }
- 
-/*
- * print the channel content
- */
-records.subscribe { println it }
