@@ -9,10 +9,6 @@ input:
     path x from params.in
 
    """
-     matlab -nodesktop -nosplash -r \
-    "disp(['Processing file' $x]); \
-    dummy($x); \
-    disp("Complete") \
-     exit" \
+     matlab -nodesktop -nosplash -r "dummy($x); exit;"
     """
 }
