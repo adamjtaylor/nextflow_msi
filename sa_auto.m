@@ -1,7 +1,7 @@
 function sa_auto(input_file)
 
 %spectralAnalysisPath = '/mnt/x/Adam/SpectralAnalysis-master/SpectralAnalysis-master';
-spectralAnalysisPath = './SpectralAnalysis-master';
+spectralAnalysisPath = './SpectralAnalysis';
 
 %inputFolder = [spectralAnalysisPath filesep 'example-data' filesep 'mouse-brain'];
 %outputFoler = [spectralAnalysisPath filesep 'example-data' filesep 'mouse-brain'];
