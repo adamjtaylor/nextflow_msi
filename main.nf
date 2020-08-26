@@ -9,6 +9,6 @@ input:
     path x from params.in
 
    """
-     matlab -nodesktop -nosplash -r "dummy($x); exit;"
+     matlab -nodesktop -nosplash -r "writematrix($x,'$HOME/Documents/test/test.txt');exit;"
     """
 }
