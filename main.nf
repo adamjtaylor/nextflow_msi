@@ -9,6 +9,6 @@ process sa_auto {
     path x from params.in
     
     """
-    matlab -nodesktop -nosplash -r "dummy($x); exit;"
+    matlab -nodesktop -nosplash -r "writematrix('test','$HOME/Documents/test/test.txt'); exit;"
     """
 }
