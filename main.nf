@@ -6,7 +6,7 @@ params.outdir = 'my-results'
 
 process sa_auto {
 
-publishDir "$params.outdir
+publishDir "$params.outdir"
 
  input:
 val x from params.in
