@@ -1,12 +1,7 @@
 function sa_auto(input_file)
 
 %spectralAnalysisPath = '/mnt/x/Adam/SpectralAnalysis-master/SpectralAnalysis-master';
-spectralAnalysisPath = './SpectralAnalysis';
-
-%inputFolder = [spectralAnalysisPath filesep 'example-data' filesep 'mouse-brain'];
-%outputFoler = [spectralAnalysisPath filesep 'example-data' filesep 'mouse-brain'];
-%outputFoler = [spectralAnalysisPath filesep 'example-data' filesep 'mouse-brain'];
-%filesToProcess = dir([inputFolder filesep '*.imzML']);
+spectralAnalysisPath = 'SpectralAnalysis';
 
 [filepath,name,ext] = fileparts(input_file)
 
@@ -24,7 +19,7 @@ addJARsToClassPath();
 
 % Generate preprocessing workflow
 preprocessing = PreprocessingWorkflow();
-preprocessing.loadWorkflow(preprocessingWorkflowFile);
+preprocessing.loadWorkflow(genpath(preprocessingWorkflowFile));
 
 peakPicking = GradientPeakDetection();
 medianPeakFilter = PeakThresholdFilterMedian(1, nzm_multiple);
