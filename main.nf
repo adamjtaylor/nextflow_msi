@@ -18,6 +18,6 @@ output:
     
     """
     git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
-     matlab -nodesktop -nodisplay -r "addpath(genpath('$HOME/Documents/nextflow_msi')); sa_auto('$x');exit"
+     matlab -nodesktop -nodisplay -r "sa_auto('$x');exit"
     """
 }
