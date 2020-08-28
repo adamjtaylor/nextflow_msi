@@ -15,6 +15,7 @@ nzm_multiple = 3; % multiple of non zero median
 % Add SpectralAnalysis to the path - this only needs to be done once per MATLAB session
 disp('Setting up ');
 addpath(genpath(spectralAnalysisPath));
+addpath(filepath);
 addJARsToClassPath();
 
 % Generate preprocessing workflow
