@@ -5,6 +5,9 @@ spectralAnalysisPath = 'SpectralAnalysis';
 
 [filepath,name,ext] = fileparts(input_file)
 
+system(['cp ' input_file ' .']);
+system(['cp ' filepath name '.ibd .']);
+
 
 % Set up datacube generation variables
 
