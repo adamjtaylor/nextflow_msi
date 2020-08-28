@@ -7,7 +7,7 @@ Then run the following command
 
     nextflow run adamjtaylor/nextflow_msi --in "path_to_imzml" --outdir "output_dir_name"
 
-In a reproducible contanarised environemnt this will
+In a reproducible  environment this will
 - zero fill
 - make the mean spectrum,
 - peak pick with 3x non zero median threshold
