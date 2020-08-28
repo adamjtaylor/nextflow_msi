@@ -19,7 +19,7 @@ addJARsToClassPath();
 
 % Generate preprocessing workflow
 preprocessing = PreprocessingWorkflow();
-preprocessing.loadWorkflow(genpath(preprocessingWorkflowFile));
+preprocessing.loadWorkflow(preprocessingWorkflowFile);
 
 peakPicking = GradientPeakDetection();
 medianPeakFilter = PeakThresholdFilterMedian(1, nzm_multiple);
