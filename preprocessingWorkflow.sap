@@ -5,3 +5,4 @@
       <parameter description="Max Spectral Channel" value="1200.000000"/>
       <parameter description="Bin Size" value="5.000000"/>
    </preprocessingMethod>
+</preprocessingWorkflow>
