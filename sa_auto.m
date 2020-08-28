@@ -14,7 +14,7 @@ spectralAnalysisPath = './SpectralAnalysis';
 % Set up datacube generation variables
 
 % Preprocessing file (.sap) location
-preprocessingWorkflowFile = 'mouse-brain-preprocessingWorkflow.sap'; 
+preprocessingWorkflowFile = 'preprocessingWorkflow.sap'; 
 nzm_multiple = 3; % multiple of non zero median
 
 % Add SpectralAnalysis to the path - this only needs to be done once per MATLAB session
