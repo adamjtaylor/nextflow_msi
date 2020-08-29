@@ -1,7 +1,7 @@
 #!/usr/bin/env nextflow
  
 params.in = Channel.fromPath( "/home/adamtaylor/Documents/mouse-brain/*.imzML" ).buffer(size:3)
-params.outdir = 'my-results'
+params.outdir = 'processed_data'
  
 
 process sa_auto {
