@@ -5,7 +5,6 @@ spectralAnalysisPath = 'SpectralAnalysis';
 
 [filepath,name,ext] = fileparts(input_file)
 
-work_folder = cd(filepath);
 
 % Set up datacube generation variables
 
@@ -18,6 +17,10 @@ disp('Setting up ');
 addpath(genpath(spectralAnalysisPath));
 addpath(filepath);
 addJARsToClassPath();
+
+% Move the inout file folder to assure access to the ibd
+work_folder = cd(filepath);
+
 
 % Generate preprocessing workflow
 preprocessing = PreprocessingWorkflow();
