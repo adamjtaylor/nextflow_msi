@@ -5,9 +5,7 @@ spectralAnalysisPath = 'SpectralAnalysis';
 
 [filepath,name,ext] = fileparts(input_file)
 
-system(['cp ' input_file ' .']);
-system(['cp ' filepath name '.ibd .']);
-
+work_folder = cd(filepath);
 
 % Set up datacube generation variables
 
@@ -42,7 +40,7 @@ peakPicking.addPeakFilter(medianPeakFilter);
 
     % obtain total spectrum
     disp(['Generating Total Spectrum for ' ,input_file]);
-    parser = ImzMLParser(input_file);
+    parser = ImzMLParser([name ext]);
     parser.parse;
     data = DataOnDisk(parser);
 
@@ -101,6 +99,8 @@ peakPicking.addPeakFilter(medianPeakFilter);
 
     %% Save all
     disp('Saving files')
+    
+    cd(work_folder);
 
    save([name '.mat'], '-struct', 'dataRepresentation_struct', '-v7.3')
    save([name '.mat'], ...
