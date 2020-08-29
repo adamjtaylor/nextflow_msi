@@ -43,7 +43,7 @@ work_folder = cd(filepath);
 
     % obtain total spectrum
     disp(['Generating Total Spectrum for ' ,input_file]);
-    parser = ImzMLParser([name ext]);
+    parser = ImzMLParser(input_file);
     parser.parse;
     data = DataOnDisk(parser);
 
