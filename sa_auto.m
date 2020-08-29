@@ -1,7 +1,6 @@
 function sa_auto(input_file)
 
-%spectralAnalysisPath = '/mnt/x/Adam/SpectralAnalysis-master/SpectralAnalysis-master';
-spectralAnalysisPath = './SpectralAnalysis';
+sa_path = 'SpectralAnalysis';
 
 [filepath,name,ext] = fileparts(input_file)
 
@@ -14,8 +13,7 @@ nzm_multiple = 3; % multiple of non zero median
 
 % Add SpectralAnalysis to the path - this only needs to be done once per MATLAB session
 disp('Setting up ');
-addpath(genpath(spectralAnalysisPath));
-addpath(filepath);
+addpath(genpath(sa_path));
 addJARsToClassPath();
 
 % Move the inout file folder to assure access to the ibd
