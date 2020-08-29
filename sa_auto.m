@@ -1,7 +1,7 @@
 function sa_auto(input_file)
 
 %spectralAnalysisPath = '/mnt/x/Adam/SpectralAnalysis-master/SpectralAnalysis-master';
-spectralAnalysisPath = 'SpectralAnalysis';
+spectralAnalysisPath = './SpectralAnalysis';
 
 [filepath,name,ext] = fileparts(input_file)
 
