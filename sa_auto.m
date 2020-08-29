@@ -16,8 +16,6 @@ disp('Setting up ');
 addpath(genpath(sa_path));
 addJARsToClassPath();
 
-% Move the inout file folder to assure access to the ibd
-work_folder = cd(filepath);
 
 
 % Generate preprocessing workflow
@@ -27,6 +25,10 @@ preprocessing.loadWorkflow(preprocessingWorkflowFile);
 peakPicking = GradientPeakDetection();
 medianPeakFilter = PeakThresholdFilterMedian(1, nzm_multiple);
 peakPicking.addPeakFilter(medianPeakFilter);
+
+% Move the inout file folder to assure access to the ibd
+work_folder = cd(filepath);
+
 
 %%
 %for i = 1:length(filesToProcess)
