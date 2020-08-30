@@ -10,8 +10,8 @@ process make_datacube {
  publishDir "$params.outdir"
 
  input:
-  path imzml from params.imzml
-  path sap from params.sap
+  val imzml from params.imzml
+  val sap from params.sap
   path f_make_datacube from params.f_make_datacube
 
  output:
