@@ -14,12 +14,12 @@ process make_datacube {
 
 
  input:
-  tuple file(ibd_imzml) from imzml_ch
+  tuple sample_id, file(ibd_imzml) from imzml_ch
   val sap from params.sap
   path f_make_datacube from params.f_make_datacube
 
  output:
-    file '${ibd_imzml[1].baseName}.mat' into res1
+    file '${sample_id}.mat' into res1
 
   """
   ibd = ibd_imzml[0]
