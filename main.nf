@@ -6,7 +6,7 @@ params.outdir = 'processed_data'
 params.f_make_datacube = "$workflow.projectDir/make_datacube.m"
 params.f_clustering = "$workflow.projectDir/clustering.m"
 
-imzml_channel = Channel.from(params.imzml)
+imzml_channel = Channel.fromPath(params.imzml)
 
 
 process make_datacube {
