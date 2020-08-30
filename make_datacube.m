@@ -24,7 +24,7 @@ medianPeakFilter = PeakThresholdFilterMedian(1, nzm_multiple);
 peakPicking.addPeakFilter(medianPeakFilter);
 
 % Move the inout file folder to assure access to the ibd
-work_folder = cd(filepath);
+%work_folder = cd(filepath);
 
 %% make datacubes from each dataset
 
@@ -71,7 +71,7 @@ pixels = dataRepresentation.pixels;
 
 %% Save all
 
-cd(work_folder);
+%cd(work_folder);
 
 save([name '.mat'], '-struct', 'dataRepresentation_struct', '-v7.3')
  
