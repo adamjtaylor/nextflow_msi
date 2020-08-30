@@ -1,4 +1,4 @@
-function sa_auto(input_imzml, input_sap)
+function make_datacube(input_imzml, input_sap)
 
 sa_path = 'SpectralAnalysis';
 
