@@ -18,7 +18,6 @@ process make_datacube {
 
   """
   git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
-  wget https://raw.githubusercontent.com/adamjtaylor/nextflow_msi/master/sa_auto.m
   matlab -nodesktop -nodisplay -r "peak_pick('$imzml', '$sap');exit"
   """
 }
