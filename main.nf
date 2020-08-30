@@ -21,6 +21,8 @@ process make_datacube {
  output:
     file '${sample_id}.mat' into res1
     
+ script:
+ 
   ibd = ibd_imzml[0]
   imzml = ibd_imzml[1]
 
