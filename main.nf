@@ -13,12 +13,12 @@ process make_datacube {
 
 
  input:
-  val imzml from imzml_channel
+  file imzml from imzml_channel
   val sap from params.sap
   path f_make_datacube from params.f_make_datacube
 
  output:
-    file '*.mat' into res1
+    file '${imzml.baseName}.mat' into res1
 
   """
   git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
@@ -32,11 +32,11 @@ process clustering {
 
 
  input:
-  val input_file from res1
+  file input_file from res1
   path f_clustering from params.f_clustering
   
   output:
-   file '*.mat' into res2 
+   file '${input_file.baseName}.mat' into res2
   
   """
   matlab -nodesktop -nodisplay -r "clustering('$input_file', 'cosine', 2, 500);exit"
