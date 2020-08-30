@@ -8,7 +8,6 @@ params.f_clustering = params.opsFile = "$workflow.projectDir/clustering.m"
 
 process make_datacube {
 
- publishDir "$params.outdir"
 
  input:
   val imzml from params.imzml
@@ -25,6 +24,9 @@ process make_datacube {
 }
 
 process clustering {
+
+ publishDir "$params.outdir"
+
 
  input:
   val input_file from res1
