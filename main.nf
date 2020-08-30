@@ -12,6 +12,7 @@ process make_datacube {
  input:
   path imzml from params.imzml
   path sap from params.sap
+  path f_make_datacube from params.f_make_datacube
 
  output:
     file '*.mat' into records
