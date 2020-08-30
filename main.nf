@@ -36,7 +36,7 @@ process clustering {
    file '*.mat' into res2 
   
   """
-  matlab -nodesktop -nodisplay -r "clustering('$input_file', 'cosine', '2', '500');exit"
+  matlab -nodesktop -nodisplay -r "clustering('$input_file', 'cosine', 2, 500);exit"
   """
 
 }
