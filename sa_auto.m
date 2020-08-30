@@ -2,7 +2,7 @@ function sa_auto(input_imzml, input_sap)
 
 sa_path = 'SpectralAnalysis';
 
-[filepath,name,ext] = fileparts(input_file)
+[filepath,name,ext] = fileparts(input_imzml)
 
 
 % Set up datacube generation variables
@@ -29,8 +29,8 @@ work_folder = cd(filepath);
 %% make datacubes from each dataset
 
 % obtain total spectrum
-disp(['Generating Total Spectrum for ' ,input_file]);
-parser = ImzMLParser(input_file);
+disp(['Generating Total Spectrum for ' ,input_imzml]);
+parser = ImzMLParser(input_imzml);
 parser.parse;
 data = DataOnDisk(parser);
 
