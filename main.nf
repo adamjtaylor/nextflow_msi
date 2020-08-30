@@ -3,7 +3,7 @@
 params.imzml = '/home/adamtaylor/Documents/mouse-brain/SagittalMouseCerebellum.imzML'
 params.sap = '/home/adamtaylor/Documents/mouse-brain/mouse-brain-preprocessingWorkflow.sap'
 params.outdir = 'processed_data'
-params.f_make_datacube = 'make_datacube.m'
+params.f_make_datacube = params.opsFile = "$workflow.projectDir/make_datacube.m"
  
 process make_datacube {
 
@@ -12,8 +12,6 @@ process make_datacube {
  input:
   path imzml from params.imzml
   path sap from params.sap
-  file make_datacube from params.f_make_datacube
-
 
  output:
     file '*.mat' into records
