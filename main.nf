@@ -14,7 +14,7 @@ process make_datacube {
 
 
  input:
-  set sampleId, file(input) from imzml_ch
+  set sampleId, file(imzML) from imzml_ch
   val sap from params.sap
   path f_make_datacube from params.f_make_datacube
 
