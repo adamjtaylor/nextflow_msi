@@ -14,7 +14,7 @@ process make_datacube {
 
 
  input:
-  set file(imzml) file(ibd) from imzml_ch
+  tuple file(imzml), file(ibd) from imzml_ch
   val sap from params.sap
   path f_make_datacube from params.f_make_datacube
 
