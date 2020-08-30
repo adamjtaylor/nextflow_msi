@@ -4,13 +4,13 @@ params.imzml = '/home/adamtaylor/Documents/mouse-brain/SagittalMouseCerebellum.i
 params.sap = '/home/adamtaylor/Documents/mouse-brain/mouse-brain-preprocessingWorkflow.sap'
 params.outdir = 'processed_data'
  
-process sa_auto {
+process peak_pick {
 
  publishDir "$params.outdir"
 
  input:
-  val imzml from params.imzml
-  val sap from params.sap
+  path imzml from params.imzml
+  path sap from params.sap
 
 
  output:
@@ -19,6 +19,8 @@ process sa_auto {
   """
   git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
   wget https://raw.githubusercontent.com/adamjtaylor/nextflow_msi/master/sa_auto.m
-  matlab -nodesktop -nodisplay -r "sa_auto('$imzml', '$sap');exit"
+  matlab -nodesktop -nodisplay -r "peak_pick('$imzml', '$sap');exit"
   """
 }
+
+
