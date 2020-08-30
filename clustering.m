@@ -3,6 +3,8 @@ function clustering(input_file, distance, k, max_peaks)
   % Load the dataacube
   load(input_file);
   
+  [filepath,name,ext] = fileparts(input_file)
+  
   % Calculate the mean spectrum
   mean_intensity_all = mean(data);
   
@@ -27,10 +29,7 @@ function clustering(input_file, distance, k, max_peaks)
 
   % Write into the mat file
   
-  save(input_file, ...
-  'spectralChannels', 'kmeans_idx', ...
-  'top_peaks_idx', 'mean_intensity_k1', 'mean_intensity_k2', 'mean_intensity_all',...
-  'distance', 'k', 'max_peaks',...
-  '-append')
+  save([name '.mat'], '-v7.3')
+
   
  end
