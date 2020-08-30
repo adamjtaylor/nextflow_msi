@@ -22,8 +22,10 @@ process make_datacube {
     file '${ibd_imzml[1].baseName}.mat' into res1
 
   """
+  ibd = ibd_imzml[0]
+  imzml = ibd_imzml[1]
   git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
-  matlab -nodesktop -nodisplay -r "make_datacube('${ibd_imzml[1]}', '$sap');exit"
+  matlab -nodesktop -nodisplay -r "make_datacube('$imzml}', '$sap');exit"
   """
 }
 
