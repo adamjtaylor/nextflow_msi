@@ -16,7 +16,7 @@ process make_datacube {
   path f_make_datacube from params.f_make_datacube
 
  output:
-    file '*.mat' into records
+    file '*.mat' into res1
 
   """
   git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
@@ -27,11 +27,11 @@ process make_datacube {
 process clustering {
 
  input:
-  val input_file from records
+  val input_file from res1
   path f_clustering from params.f_clustering
   
   output:
-   file '*.mat' into records 
+   file '*.mat' into res2 
   
   """
   matlab -nodesktop -nodisplay -r "clustering('$input_file', 'cosine', '2', '500');exit"
