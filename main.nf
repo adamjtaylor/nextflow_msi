@@ -4,7 +4,8 @@ params.imzml = '/home/adamtaylor/Documents/mouse-brain/SagittalMouseCerebellum.i
 params.sap = '/home/adamtaylor/Documents/mouse-brain/mouse-brain-preprocessingWorkflow.sap'
 params.outdir = 'processed_data'
 params.f_make_datacube = params.opsFile = "$workflow.projectDir/make_datacube.m"
- 
+params.f_clustering = params.opsFile = "$workflow.projectDir/clustering.m"
+
 process make_datacube {
 
  publishDir "$params.outdir"
@@ -23,4 +24,16 @@ process make_datacube {
   """
 }
 
+process clustering
+
+ input:
+  val input_file from records
+  path f_clustering from params.f_clustering
+  
+  output
+   file '*.mat' into records 
+  
+  """
+  matlab -nodesktop -nodisplay -r "clustering('$input_file', 'cosine', '2', '500');exit"
+  """
 
