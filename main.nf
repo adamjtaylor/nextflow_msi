@@ -10,7 +10,6 @@ imzml_ibd_pair = params.imzml.replaceFirst(/imzml/, "{imzml,ibd}")
 
 imzml_ch = Channel.fromFilePairs(imzml_ibd_pair, size:2, flat : true)
 
-imzml_ch.subscribe { println "$it" }
 
 
 process make_datacube {
