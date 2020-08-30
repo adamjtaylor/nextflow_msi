@@ -13,7 +13,7 @@ process make_datacube {
 
 
  input:
-  var imzml from imzml_channel
+  file imzml from imzml_channel
   val sap from params.sap
   path f_make_datacube from params.f_make_datacube
 
