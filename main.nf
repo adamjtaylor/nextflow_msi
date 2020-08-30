@@ -2,7 +2,6 @@
  
 params.imzml = '/home/adamtaylor/Documents/mouse-brain/SagittalMouseCerebellum.imzML'
 params.sap = '/home/adamtaylor/Documents/mouse-brain/mouse-brain-preprocessingWorkflow.sap'
-params.make_datacube = 'make_datacube.m'
 params.outdir = 'processed_data'
  
 process make_datacube {
