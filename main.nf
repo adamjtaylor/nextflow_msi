@@ -4,7 +4,7 @@ params.imzml = '/home/adamtaylor/Documents/mouse-brain/SagittalMouseCerebellum.i
 params.sap = '/home/adamtaylor/Documents/mouse-brain/mouse-brain-preprocessingWorkflow.sap'
 params.outdir = 'processed_data'
  
-process peak_pick {
+process make_datacube {
 
  publishDir "$params.outdir"
 
