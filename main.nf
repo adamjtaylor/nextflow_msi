@@ -14,16 +14,16 @@ process make_datacube {
 
 
  input:
-  tuple path(imzml), path(ibd) from imzml_ch
+  tuple file(ibd_imzml) from imzml_ch
   val sap from params.sap
   path f_make_datacube from params.f_make_datacube
 
  output:
-    file '${imzml.baseName}.mat' into res1
+    file '${ibd_imzml[1].baseName}.mat' into res1
 
   """
   git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
-  matlab -nodesktop -nodisplay -r "make_datacube('${imzml}.imzML', '$sap');exit"
+  matlab -nodesktop -nodisplay -r "make_datacube('${ibd_imzml[1]}', '$sap');exit"
   """
 }
 
