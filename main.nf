@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
  
-params.imzml = '/home/adamtaylor/Documents/mouse-brain/SagittalMouseCerebellum.imzML'
+params.imzml =  Channel.from('/home/adamtaylor/Documents/mouse-brain/SagittalMouseCerebellum.imzML')
 params.sap = '/home/adamtaylor/Documents/mouse-brain/mouse-brain-preprocessingWorkflow.sap'
 params.outdir = 'processed_data'
 params.f_make_datacube = "$workflow.projectDir/make_datacube.m"
