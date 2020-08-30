@@ -16,17 +16,12 @@ process make_datacube {
 
 
  input:
-  tuple sample_id, path(ibd_imzml) from imzml_ch
+  tuple sample_id, path(ibd), path(imzml) from imzml_ch
   val sap from params.sap
   path f_make_datacube from params.f_make_datacube
 
  output:
     file '${sample_id}.mat' into res1
-    
- script:
- 
-  ibd = ibd_imzml[0]
-  imzml = ibd_imzml[1]
 
   """
   git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
