@@ -8,18 +8,18 @@ params.f_clustering = "$workflow.projectDir/clustering.m"
 
 imzml_ibd_pair = params.imzml.replaceFirst(/imzml/, "{imzml,ibd}")
 
-imzml_ch = Channel.fromFilePairs(imzml_ibd_pair)
+imzml_ch = Channel.fromFilePairs(imzml_ibd_pair, flat: true)
 
 process make_datacube {
 
 
  input:
-  set sampleId file(imzml) file(ibd) from imzml_ch
+  set file(imzml) file(ibd) from imzml_ch
   val sap from params.sap
   path f_make_datacube from params.f_make_datacube
 
  output:
-    file '${sampleId}.mat' into res1
+    file '${imzml.baseName}.mat' into res1
 
   """
   git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
