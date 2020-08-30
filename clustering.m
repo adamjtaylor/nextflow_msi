@@ -8,7 +8,7 @@ function clustering(input_file, distance, k, max_peaks)
   
   % Make a smaller datacube of the topk peaks
   
-  [~, top_peaks_idx] = maxk([mean_intensity_all], maz_peaks);
+  [~, top_peaks_idx] = maxk([mean_intensity_all], max_peaks);
   small_data = small_data(:,top_peaks_idx);
 
   [kmeans_idx, ~, ~ ] = kmeans(small_data, k, 'distance', distance);
