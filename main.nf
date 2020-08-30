@@ -30,7 +30,7 @@ process clustering {
   val input_file from records
   path f_clustering from params.f_clustering
   
-  output
+  output:
    file '*.mat' into records 
   
   """
