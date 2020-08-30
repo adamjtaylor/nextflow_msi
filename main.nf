@@ -8,7 +8,7 @@ params.f_clustering = "$workflow.projectDir/clustering.m"
 
 imzml_ibd_pair = params.imzml.replaceFirst(/imzml/, "{imzml,ibd}")
 
-imzml_ch = Channel.from(imzml_ibd_pair)
+imzml_ch = Channel.fromFilePairs(imzml_ibd_pair)
 
 process make_datacube {
 
