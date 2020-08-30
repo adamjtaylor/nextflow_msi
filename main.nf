@@ -1,25 +1,24 @@
 #!/usr/bin/env nextflow
  
-params.in = Channel.fromPath( "/home/adamtaylor/Documents/mouse-brain/*.imzML" ).buffer(size:3)
+params.imzml = '/home/adamtaylor/Documents/mouse-brain/SagitalMouseCerebellum.imzML'
+params.sap = '/home/adamtaylor/Documents/mouse-brain/mouse-brain-preprocessingWorkflow.sap
 params.outdir = 'processed_data'
  
-
 process sa_auto {
 
-publishDir "$params.outdir"
+ publishDir "$params.outdir"
 
  input:
-val x from params.in
+  val imzml from params.imzml
+  val sap from params.sap
 
 
-output:
+ output:
     file '*.mat' into records
 
-    
-    """
-    git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
-    wget https://raw.githubusercontent.com/adamjtaylor/nextflow_msi/master/sa_auto.m
-    wget https://raw.githubusercontent.com/adamjtaylor/nextflow_msi/master/preprocessingWorkflow.sap
-     matlab -nodesktop -nodisplay -r "sa_auto('$x');exit"
-    """
+  """
+  git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
+  wget https://raw.githubusercontent.com/adamjtaylor/nextflow_msi/master/sa_auto.m
+  matlab -nodesktop -nodisplay -r "sa_auto('$imzml', '$sap');exit"
+  """
 }
