@@ -6,6 +6,13 @@ params.outdir = 'processed_data'
 params.f_make_datacube = params.opsFile = "$workflow.projectDir/make_datacube.m"
 params.f_clustering = params.opsFile = "$workflow.projectDir/clustering.m"
 
+process install_sa {
+
+ """
+ git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
+ """
+}
+
 process make_datacube {
 
  publishDir "$params.outdir"
@@ -19,12 +26,11 @@ process make_datacube {
     file '*.mat' into records
 
   """
-  git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
   matlab -nodesktop -nodisplay -r "make_datacube('$imzml', '$sap');exit"
   """
 }
 
-process clustering
+process clustering {
 
  input:
   val input_file from records
@@ -37,3 +43,4 @@ process clustering
   matlab -nodesktop -nodisplay -r "clustering('$input_file', 'cosine', '2', '500');exit"
   """
 
+}
