@@ -13,7 +13,7 @@ pairs = Channel.fromFilePairs(imzml_ibd_pair, flat: true)
 process make_datacube {
 
  input:
-  set sample_id, val(ibd), val(imzml) from pairs
+  set sample_id, path(ibd), path(imzml) from pairs
 //  val sap from params.sap
  // path f_make_datacube from params.f_make_datacube
 
