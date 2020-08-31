@@ -1,10 +1,10 @@
 #!/usr/bin/env nextflow
  
 params.imzml =  '/home/adamtaylor/Documents/mouse-brain/SagittalMouseCerebellum.imzML'
-//params.sap = '/home/adamtaylor/Documents/mouse-brain/mouse-brain-preprocessingWorkflow.sap'
-//params.outdir = 'processed_data'
-//params.f_make_datacube = "$workflow.projectDir/make_datacube.m"
-//params.f_clustering = "$workflow.projectDir/clustering.m"
+params.sap = '/home/adamtaylor/Documents/mouse-brain/mouse-brain-preprocessingWorkflow.sap'
+params.outdir = 'processed_data'
+params.f_make_datacube = "$workflow.projectDir/make_datacube.m"
+params.f_clustering = "$workflow.projectDir/clustering.m"
 
 imzml_ibd_pair = params.imzml.replaceFirst(/imzML/, "{imzML,ibd}")
 
