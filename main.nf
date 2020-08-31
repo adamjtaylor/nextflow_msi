@@ -33,21 +33,21 @@ process make_datacube {
 rec_imzml.view { "imzML: $it" }
 rec_ibd.view { "ibd: $it" }
 
-//process clustering {
-//
-// publishDir "$params.outdir"
-//
-//
-// input:
-//  file input_file from res1
-//  path f_clustering from params.f_clustering
-//  
-//  output:
-//   file '${input_file.baseName}.mat' into res2
-//  
-//  """
-//  matlab -nodesktop -nodisplay -r "clustering('$input_file', 'cosine', 2, 500);exit"
-//  """
-//
-//}
-//
+process clustering {
+
+ publishDir "$params.outdir"
+
+
+ input:
+  file input_file from res1
+  path f_clustering from params.f_clustering
+  
+  output:
+   file '${input_file.baseName}.mat' into res2
+  
+  """
+  matlab -nodesktop -nodisplay -r "clustering('$input_file', 'cosine', 2, 500);exit"
+  """
+
+}
+
