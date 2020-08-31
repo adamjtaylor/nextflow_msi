@@ -14,19 +14,19 @@ process make_datacube {
 
  input:
   set sample_id, path(ibd), path(imzml) from pairs
-//  val sap from params.sap
- // path f_make_datacube from params.f_make_datacube
+  val sap from params.sap
+  path f_make_datacube from params.f_make_datacube
 
  output:
     val(imzml) into rec_imzml
     val(ibd) into rec_ibd
- //   file '${sample_id}.mat' into res1
+    file '${sample_id}.mat' into res1
 
   """
   echo $imzml > file
   echo $ibd > file
-
-
+  git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
+  matlab -nodesktop -nodisplay -r "make_datacube('$imzml', '$sap');exit"	//  matlab -nodesktop -nodisplay -r "make_datacube('$imzml', '$sap');exit"
   """
 }
 
