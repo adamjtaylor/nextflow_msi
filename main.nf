@@ -6,7 +6,7 @@ params.outdir = 'processed_data'
 params.f_make_datacube = "$workflow.projectDir/make_datacube.m"
 params.f_clustering = "$workflow.projectDir/clustering.m"
 
-imzml_ibd_pair = params.imzml.replaceFirst(/imzml/, "\{imzml,ibd\}")
+imzml_ibd_pair = params.imzml.replaceFirst(/imzml/, "{imzml,ibd}")
 
 imzml_ch = Channel.fromFilePairs(imzml_ibd_pair)
 
