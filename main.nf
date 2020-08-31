@@ -20,7 +20,7 @@ process make_datacube {
  output:
     val(imzml) into rec_imzml
     val(ibd) into rec_ibd
-    file '${sample_id}.mat' into res1
+    file '$sample_id.mat' into res1
 
   """
   echo $imzml > file
