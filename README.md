@@ -20,6 +20,6 @@ In a reproducible  environment this will
 
 TODO
 
-- [x] Install SA within container
+- [ ] Install SA within container
 - [ ] Allow to work in parallel through multiple files
-- [ ] Define preprocessing file - currenrly defaults to interpolation ppm rebin between m/z 50-1200 with 5 ppm bin width
+- [x] Define preprocessing file - currenrly defaults to interpolation ppm rebin between m/z 50-1200 with 5 ppm bin width
