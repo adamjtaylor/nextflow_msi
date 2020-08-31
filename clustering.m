@@ -33,7 +33,7 @@ disp('Calculate cluster mean spectra')
 
   % Write into the mat file
   disp(['Saving workspace to: ' name '.mat'])
-  save([name '_processed.mat'], '-v7.3');
+  save([name '_nf.mat'], '-v7.3');
 
   
  end
