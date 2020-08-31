@@ -30,7 +30,7 @@ process make_datacube {
   """
 }
 
-rec_imzml.view {Received: $it}
+rec_imzml.view {'Received: $it'}
 // rec_ibd.view {Matched: $it}
 
 //process clustering {
