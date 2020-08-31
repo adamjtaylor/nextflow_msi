@@ -1,6 +1,6 @@
 function make_datacube(input_imzml, input_sap)
 
-sa_path = 'SpectralAnalysis';
+sa_path = '/home/adamtaylor/SpectralAnalysis';
 
 [filepath,name,ext] = fileparts(input_imzml);
 
