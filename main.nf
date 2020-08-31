@@ -18,8 +18,8 @@ process make_datacube {
  // path f_make_datacube from params.f_make_datacube
 
  output:
-    val(imzml) into receiver
-  //  val(ibd) into rec_ibd
+    val(imzml) into rec_imzml
+    val(ibd) into rec_ibd
  //   file '${sample_id}.mat' into res1
 
   """
@@ -30,8 +30,8 @@ process make_datacube {
   """
 }
 
-receiver.view { "Received: $it" }
-// rec_ibd.view {Matched: $it}
+rec_imzml.view { "imzML: $it" }
+rec_ibd.view { "ibd: $it" }
 
 //process clustering {
 //
