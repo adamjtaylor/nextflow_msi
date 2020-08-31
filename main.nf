@@ -25,7 +25,8 @@ process make_datacube {
   """
   echo $imzml > file
   echo $ibd > file
-//  git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
+
+
   """
 }
 
