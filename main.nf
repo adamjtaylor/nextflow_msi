@@ -13,12 +13,12 @@ imzml_ch = Channel.fromFilePairs(imzml_ibd_pair, flat: true)
 process make_datacube {
 
  input:
-  set sample_id, path(ibd), path(imzml) from imzml_ch
+  set sample_id, file(ibd), file(imzml) from imzml_ch
   val sap from params.sap
   path f_make_datacube from params.f_make_datacube
 
  output:
-    file '${imzml.baseName}.mat' into res1
+    file '${sample_id}.mat' into res1
 
   """
   git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
