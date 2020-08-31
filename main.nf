@@ -43,7 +43,7 @@ process clustering {
   path f_clustering from params.f_clustering
   
   output:
-   path '*_processed.mat' into res2
+   path '*_nf.mat' into res2
   
   """
   matlab -nodesktop -nodisplay -r "clustering('$input_file', 'cosine', 2, 500);exit"
