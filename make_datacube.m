@@ -2,7 +2,7 @@ function make_datacube(input_imzml, input_sap)
 
 sa_path = 'SpectralAnalysis';
 
-[filepath,name,ext] = fileparts(input_imzml)
+[filepath,name,ext] = fileparts(input_imzml);
 
 
 % Set up datacube generation variables
@@ -74,6 +74,5 @@ pixels = dataRepresentation.pixels;
 %cd(work_folder);
 
 save([name '.mat'], '-struct', 'dataRepresentation_struct', '-v7.3')
- 
 
-exit;
+end
