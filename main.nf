@@ -50,4 +50,3 @@ process clustering {
   """
 
 }
-res2.view { "Processing complete: $params.outdir/${it.baseName}.mat" }
