@@ -20,7 +20,7 @@ process make_datacube {
  output:
     val(imzml) into rec_imzml
     val(ibd) into rec_ibd
-    file '*.mat' into res1
+    path '*.mat' into res1
 
   """
   echo $imzml > file
@@ -39,11 +39,11 @@ process clustering {
 
 
  input:
-  file input_file from res1
+  path input_file from res1
   path f_clustering from params.f_clustering
   
   output:
-   file '*.mat' into res2
+   path '*.mat' into res2
   
   """
   matlab -nodesktop -nodisplay -r "clustering('$input_file', 'cosine', 2, 500);exit"
