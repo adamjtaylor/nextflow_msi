@@ -25,7 +25,7 @@ process make_datacube {
   """
   echo $imzml > file
   echo $ibd > file
-  git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
+  # git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
   matlab -nodesktop -nodisplay -r "make_datacube('$imzml', '$sap');exit"
   """
 }
