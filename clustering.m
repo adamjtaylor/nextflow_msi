@@ -60,6 +60,7 @@ disp('Calculate cluster mean spectra')
   % Use log2 tissue background ratio to fund peaks that are tissue localised
   tb_ratio = log2(mean_intensity_tissue./mean_intensity_bg);
   tissue_peak_idx = find(tb_ratio > 0);
+  tissue_spectralChannels = spectralChannels(tissue_peak_idx);
   
   % Get the index of the tissue pixels
   tissue_pixel_idx = find(kmeans_idx == tissue_cluster);
