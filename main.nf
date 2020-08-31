@@ -18,28 +18,34 @@ process make_datacube {
   path f_make_datacube from params.f_make_datacube
 
  output:
-    file '${sample_id}.mat' into res1
+    val(imzml) into rec_imzml
+    val(ibd) into rec_ibd
+ //   file '${sample_id}.mat' into res1
 
   """
   git clone -b 'v1.4.0' --single-branch https://github.com/AlanRace/SpectralAnalysis.git
-  matlab -nodesktop -nodisplay -r "make_datacube('$imzml', '$sap');exit"
+//  matlab -nodesktop -nodisplay -r "make_datacube('$imzml', '$sap');exit"
   """
 }
 
-process clustering {
+rec_imzml.view {Received: $it}
+rec_ibd.view {Matched: $it}
 
- publishDir "$params.outdir"
-
-
- input:
-  file input_file from res1
-  path f_clustering from params.f_clustering
-  
-  output:
-   file '${input_file.baseName}.mat' into res2
-  
-  """
-  matlab -nodesktop -nodisplay -r "clustering('$input_file', 'cosine', 2, 500);exit"
-  """
-
-}
+//process clustering {
+//
+// publishDir "$params.outdir"
+//
+//
+// input:
+//  file input_file from res1
+//  path f_clustering from params.f_clustering
+//  
+//  output:
+//   file '${input_file.baseName}.mat' into res2
+//  
+//  """
+//  matlab -nodesktop -nodisplay -r "clustering('$input_file', 'cosine', 2, 500);exit"
+//  """
+//
+//}
+//
