@@ -61,18 +61,18 @@ addlistener(reduction, 'FastMethods', @(src, canUseFastMethods)disp(['! Using fa
 
 dataRepresentationList = reduction.process(data);
 
+disp('Data cube generated')
+
 % We only requested one data representation, the entire dataset so extract that from the list
 dataRepresentation = dataRepresentationList.get(1);
 % Convert class to struct so that if SpectralAnalysis changes the DataRepresentation class, the data can still be loaded in
+
+disp('Structure prepared')
 dataRepresentation_struct = dataRepresentation.saveobj();
 
-datacube = dataRepresentation.data;
-pixels = dataRepresentation.pixels;
-
 %% Save all
-
-%cd(work_folder);
-
+disp('Saving structure')
 save([name '.mat'], '-struct', 'dataRepresentation_struct', '-v7.3')
+disp('Complete')
 
 end
