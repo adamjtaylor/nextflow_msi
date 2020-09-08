@@ -2,7 +2,7 @@
  
 params.imzml =  '/home/adamtaylor/Documents/mouse-brain/SagittalMouseCerebellum.imzML'
 params.sap = '/home/adamtaylor/Documents/mouse-brain/mouse-brain-preprocessingWorkflow.sap'
-params.outdir = 'processed_data'
+params.outdir = '.'
 params.f_make_datacube = "$workflow.projectDir/make_datacube.m"
 params.f_clustering = "$workflow.projectDir/clustering.m"
 
