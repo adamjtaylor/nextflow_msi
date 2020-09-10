@@ -45,7 +45,7 @@ process peak_picking{
   path 'picked_peaks.mat' into ch_picked_peaks
  
  """
- matlab -nodesktop -nodisplay -r "addpath(genpath('$workflow.projectDir'));peak_picking('$input_file', $nzm_multiple, '$sa_path);exit"
+ matlab -nodesktop -nodisplay -r "addpath(genpath('$workflow.projectDir'));peak_picking('$input_file', $nzm_multiple, '$sa_path');exit"
  """
   
 }
