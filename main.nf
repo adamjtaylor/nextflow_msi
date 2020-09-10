@@ -27,7 +27,7 @@ process total_spectrum{
   """
   echo $imzml > file
   echo $ibd > file
-  matlab -nodesktop -nodisplay -r "addpath(genpath('bin'));total_spectrum('$imzml', '$sap', '$sa_path');exit"
+  matlab -nodesktop -nodisplay -r "addpath(genpath(pwd));total_spectrum('$imzml', '$sap', '$sa_path');exit"
   """
 }
 
@@ -45,7 +45,7 @@ process peak_picking{
   path 'picked_peaks.mat' into ch_picked_peaks
  
  """
- matlab -nodesktop -nodisplay -r "addpath(genpath('bin'));peak_picking('$input_file', $nzm_multiple, '$sa_path);exit"
+ matlab -nodesktop -nodisplay -r "addpath(genpath(pwd));peak_picking('$input_file', $nzm_multiple, '$sa_path);exit"
  """
   
 }
@@ -61,7 +61,7 @@ process make_datacube {
    path 'datacube.mat' into ch_datacube
   
   """
-  matlab -nodesktop -nodisplay -r "addpath(genpath('bin'));make_datacube('$imzml', '$peaks', '$sa_path');exit"
+  matlab -nodesktop -nodisplay -r "addpath(genpath(pwd));make_datacube('$imzml', '$peaks', '$sa_path');exit"
   """
 }
 
@@ -77,7 +77,7 @@ process cluster_tissue_background {
    path '*_nf.mat' into ch_final
   
   """
-  matlab -nodesktop -nodisplay -r "addpath(genpath('bin'));cluster_tissue_background('$datacube', 'cosine', 2, 500, '$sa_path');exit"
+  matlab -nodesktop -nodisplay -r "addpath(genpath(pwd));cluster_tissue_background('$datacube', 'cosine', 2, 500, '$sa_path');exit"
   """
 }
 
