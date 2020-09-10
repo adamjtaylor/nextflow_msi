@@ -74,7 +74,7 @@ process cluster_tissue_background {
   val sa_path from params.sa_path
   
   output:
-   path '*_nf.mat' into ch_datacube
+   path '*_nf.mat' into ch_final
   
   """
   matlab -nodesktop -nodisplay -r "cluster_tissue_background('$datacube', 'cosine', 2, 500, '$sa_path');exit"
