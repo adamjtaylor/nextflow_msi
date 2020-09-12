@@ -8,12 +8,7 @@ params.outdir = '.'
 
 
 ch_imzml = Channel
-    .fromPath('$params.imzml_folder/*.imzML')
-
-imzml_ibd_pair = ch_imzml.replaceFirst(/imzML/, "{imzML,ibd}")
-
-ch_pairs = Channel.fromFilePairs(imzml_ibd_pair, flat: true)
-ch_pairs.into { ch_pairs1; ch_pairs2 }
+    .fromFilePairs('$params.imzml_folder/*.{imzML,ibd}')
 
 
 process total_spectrum_together{
@@ -52,7 +47,7 @@ process peak_picking{
 process make_datacube {
 
  input:
-  set sample_id, path(ibd), path(imzml) from ch_pairs2
+  set sample_id, path(ibd), path(imzml) from ch_imzml
   path peaks from ch_picked_peaks
   val sa_path from params.sa_path
   
