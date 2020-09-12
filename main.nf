@@ -22,8 +22,6 @@ process total_spectrum_together{
     path 'mean_spectrum_together.mat' into ch_mean_spectra
 
   """
-  echo $imzml > file
-  echo $ibd > file
   matlab -nodesktop -nodisplay -r "addpath(genpath('$workflow.projectDir'));total_spectrum_together('$input_folder', '$sap', '$sa_path');exit"
   """
 }
