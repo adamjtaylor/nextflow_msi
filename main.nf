@@ -6,11 +6,9 @@ params.sa_path = '/home/adamtaylor/SpectralAnalysis'
 params.nzm_multiple = 3
 params.outdir = '.'
 
-all_imzml = params.imzml_folder.list()
 
 ch_imzml = Channel
-    .from(all_imzml)
-    .filter(~/.imzML$/)
+    .fromPath('$params.imzml_folder/*.imzML')
 
 imzml_ibd_pair = ch_imzml.replaceFirst(/imzML/, "{imzML,ibd}")
 
