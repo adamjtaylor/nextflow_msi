@@ -51,7 +51,7 @@ process make_datacube {
   
   output:
    path 'datacube.mat' into ch_datacube
-   sample_id into ch_id
+   val sample_id into ch_id
   
   """
   matlab -nodesktop -nodisplay -r "addpath(genpath('$workflow.projectDir'));make_datacube('$imzml', '$peaks', '$sa_path');exit"
@@ -65,7 +65,7 @@ process cluster_tissue_background {
  input:
   path datacube from ch_datacube
   val sa_path from params.sa_path
-  sample_id from ch_id
+  val sample_id from ch_id
   
   output:
    path 'clustered_datacube.mat' into ch_final
