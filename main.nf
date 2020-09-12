@@ -9,7 +9,7 @@ params.outdir = '.'
 all_imzml = params.imzml_folder.list()
 
 ch_imzml = Channel
-    .from(params.imzml_folder.list())
+    .from(all_imzml)
     .filter(~/.imzML$/)
 
 imzml_ibd_pair = ch_imzml.replaceFirst(/imzML/, "{imzML,ibd}")
