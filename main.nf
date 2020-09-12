@@ -1,6 +1,6 @@
 #!/usr/bin/env nextflow
  
-params.imzml_folder =  '/home/adamtaylor/Documents/mouse-brain/multiple/'
+params.imzml_folder =  '/home/adamtaylor/Documents/mouse-brain/multiple'
 params.sap = '/home/adamtaylor/Documents/mouse-brain/mouse-brain-preprocessingWorkflow.sap'
 params.sa_path = '/home/adamtaylor/SpectralAnalysis'
 params.nzm_multiple = 3
