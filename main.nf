@@ -8,7 +8,7 @@ params.outdir = '.'
 
 
 ch_imzml = Channel
-    .fromFilePairs('/home/adamtaylor/Documents/mouse-brain/multiple/*.{imzML,ibd}', flat: true)
+    .fromFilePairs("${params.imzml_folder}/*.{imzML,ibd}", flat: true)
 
 
 process total_spectrum_together{
