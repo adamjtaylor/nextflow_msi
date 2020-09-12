@@ -68,7 +68,7 @@ process cluster_tissue_background {
   sample_id from ch_id
   
   output:
-   path '*_nf.mat' into ch_final
+   path 'clustered_datacube.mat' into ch_final
   
   """
   matlab -nodesktop -nodisplay -r "addpath(genpath('$workflow.projectDir'));cluster_tissue_background('$datacube', 'cosine', 2, 500, '$sa_path');exit"
