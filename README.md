@@ -5,7 +5,7 @@ to run ensure you have nextflow installed then cd to the folder you wish the out
 
 Then run the following command
 
-    nextflow run adamjtaylor/nextflow_msi --imzml "path-to-imzml" --sap "path-to-preprocessing-workflow-file" --sa_path "path-to-spectralanalysis --outdir "processed_data"
+    nextflow run adamjtaylor/nextflow_msi -r master --imzml "path-to-imzml" --sap "path-to-preprocessing-workflow-file" --sa_path "path-to-spectralanalysis --outdir "processed_data"
 
 To process files together specify
 
